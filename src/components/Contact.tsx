@@ -1,7 +1,7 @@
+'use client'
+
 import { Send } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
+import { ContactForm } from './ContactForm'
 
 export function Contact() {
   return (
@@ -22,36 +22,12 @@ export function Contact() {
             <div className="space-y-2">
               <p className="flex items-center gap-2">
                 <Send className="h-5 w-5 text-rose-600" />
-                <span>info@everlovecharity.com</span>
+                <a href="mailto:info@everlovecharity.com">info@everlovecharity.com</a>
               </p>
             </div>
           </div>
 
-          <div className="rounded-xl border bg-card p-6 shadow-sm">
-            <form className="space-y-4">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">
-                    Name
-                  </label>
-                  <Input id="name" placeholder="Your name" />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">
-                    Email
-                  </label>
-                  <Input id="email" type="email" placeholder="Your email" />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">
-                  Message
-                </label>
-                <Textarea id="message" placeholder="Your message" rows={4} />
-              </div>
-              <Button className="w-full bg-rose-600 hover:bg-rose-700">Send Message</Button>
-            </form>
-          </div>
+          <ContactForm />
         </div>
       </div>
     </section>
