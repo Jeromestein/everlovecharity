@@ -64,7 +64,7 @@ export function ContactForm() {
     try {
       // Build email content
       const htmlContent = `
-        <h2>New Contact Form Submission</h2>
+        <h2>Everlove Charity - New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${values.firstName} ${values.lastName}</p>
         <p><strong>Email:</strong> ${values.email}</p>
         <p><strong>Reason:</strong> ${values.reason}</p>
@@ -75,7 +75,7 @@ export function ContactForm() {
       // Send email
       await resendEmail({
         to: values.email, // Use environment variable or default value
-        subject: `Contact Form: ${values.firstName} ${values.lastName} - ${values.reason}`,
+        subject: `Everlove Charity - Contact Form: ${values.firstName} ${values.lastName} - ${values.reason}`,
         html: htmlContent,
       })
 
@@ -204,7 +204,7 @@ export function ContactForm() {
             className="w-full bg-rose-600 hover:bg-rose-700"
             disabled={isLoading}
           >
-            {isLoading ? '发送中...' : '发送消息'}
+            {isLoading ? 'Sending...' : 'Send Message'}
           </Button>
         </form>
       </Form>
