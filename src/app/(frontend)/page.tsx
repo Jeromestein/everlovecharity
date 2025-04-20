@@ -121,7 +121,8 @@ export default function Home() {
                 <p className="text-lg text-muted-foreground">
                   Everlove is a nonprofit organization dedicated to addressing global educational
                   inequality. We believe education is a transformative force. In the regions where
-                  we work, every backpack, every book is a child's starting point to a better life.
+                  we work, every backpack, every book is a child&apos;s starting point to a better
+                  life.
                 </p>
                 <Button className="bg-rose-600 hover:bg-rose-700">
                   About Our Work <ArrowRight className="ml-2 h-4 w-4" />
@@ -242,8 +243,8 @@ export default function Home() {
                   Have questions or want to learn more?
                 </h2>
                 <p className="text-muted-foreground">
-                  We'd love to hear from you. Reach out with any questions about our work or how you
-                  can get involved.
+                  We&apos;d love to hear from you. Reach out with any questions about our work or
+                  how you can get involved.
                 </p>
                 <div className="space-y-2">
                   <p className="flex items-center gap-2">
