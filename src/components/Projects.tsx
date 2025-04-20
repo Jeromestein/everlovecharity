@@ -30,7 +30,7 @@ export function Projects() {
             </div>
             <div className="p-6">
               <h3 className="text-xl font-bold">Rwanda Classroom Initiative</h3>
-              <p className="mt-2 text-muted-foreground">
+              <p className="mt-2 text-muted-foreground min-h-[4.5rem] line-clamp-3">
                 Building a new school facility in rural Rwanda to provide education for 60+ children
               </p>
               <Button variant="link" className="mt-4 p-0 text-rose-600">
@@ -50,7 +50,7 @@ export function Projects() {
             </div>
             <div className="p-6">
               <h3 className="text-xl font-bold">Books & Supplies Program</h3>
-              <p className="mt-2 text-muted-foreground">
+              <p className="mt-2 text-muted-foreground min-h-[4.5rem] line-clamp-3">
                 Providing essential learning materials to children in underserved communities
               </p>
               <Button variant="link" className="mt-4 p-0 text-rose-600">

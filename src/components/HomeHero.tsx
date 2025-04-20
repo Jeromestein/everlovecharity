@@ -29,7 +29,7 @@ export function HomeHero() {
             <Button
               size="lg"
               variant="outline"
-              className="text-white border-white hover:bg-white/10"
+              className="text-rose-800 border-white hover:bg-black/10"
             >
               Learn More
             </Button>
