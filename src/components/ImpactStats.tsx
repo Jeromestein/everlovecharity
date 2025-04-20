@@ -1,24 +1,81 @@
-import { Globe, BookOpen, School } from 'lucide-react'
+'use client'
+
+import { motion, useAnimate } from 'framer-motion'
+import { useEffect } from 'react'
 
 export function ImpactStats() {
+  const [scope, animate] = useAnimate()
+
+  useEffect(() => {
+    // Start counting animations
+    let percentageCounter = { value: 100 }
+    let moneyCounter = { value: 10 }
+
+    animate(
+      percentageCounter,
+      {
+        value: 8,
+      },
+      {
+        duration: 2,
+        onUpdate: () => {
+          const el = document.querySelector('#percentage')
+          if (el) el.textContent = Math.round(percentageCounter.value) + '%'
+        },
+      },
+    )
+
+    // Animate money value with increasing zeros
+    const animateMoneyValue = async () => {
+      const values = [
+        100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000,
+        100000000000, 1000000000000, 10000000000000,
+      ]
+
+      for (const value of values) {
+        await animate(moneyCounter, { value }, { duration: 0.3 })
+        const el = document.querySelector('#money')
+        if (el) el.textContent = '$' + moneyCounter.value.toLocaleString()
+      }
+    }
+
+    animateMoneyValue()
+  }, [animate])
+
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white py-10" ref={scope}>
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="space-y-2 p-6 rounded-lg bg-gradient-to-br from-rose-50 to-purple-50">
-            <Globe className="mx-auto h-10 w-10 text-rose-600" />
-            <h3 className="text-3xl font-bold">2+</h3>
-            <p className="text-muted-foreground">Countries with active projects</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="p-8 rounded-lg bg-gradient-to-br from-rose-200 to-purple-50 flex flex-col justify-between min-h-[200px]">
+            <span className="text-4xl text-muted-foreground font-normal">Only</span>
+            <motion.span
+              id="percentage"
+              initial={{ color: 'rgb(22, 163, 74)' }}
+              animate={{ color: 'rgb(225, 29, 72)' }}
+              transition={{ duration: 2, ease: 'easeOut' }}
+              className="text-7xl font-bold"
+            >
+              100%
+            </motion.span>
+            <span className="text-xl text-muted-foreground font-normal">
+              of children in low-income countries can read by age 10
+            </span>
           </div>
-          <div className="space-y-2 p-6 rounded-lg bg-gradient-to-br from-rose-50 to-purple-50">
-            <BookOpen className="mx-auto h-10 w-10 text-rose-600" />
-            <h3 className="text-3xl font-bold">120+</h3>
-            <p className="text-muted-foreground">Children benefiting from our programs</p>
-          </div>
-          <div className="space-y-2 p-6 rounded-lg bg-gradient-to-br from-rose-50 to-purple-50">
-            <School className="mx-auto h-10 w-10 text-rose-600" />
-            <h3 className="text-3xl font-bold">1</h3>
-            <p className="text-muted-foreground">School currently under construction</p>
+
+          <div className="p-8 rounded-lg bg-gradient-to-br from-rose-200 to-purple-50 flex flex-col justify-between min-h-[200px]">
+            <span className="text-4xl text-muted-foreground font-normal">More than</span>
+            <motion.span
+              id="money"
+              className="text-5xl text-rose-600 font-bold"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              $10
+            </motion.span>
+            <span className="text-xl text-muted-foreground font-normal">
+              dollars are lost each year as a result of children not learning
+            </span>
           </div>
         </div>
       </div>
