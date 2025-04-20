@@ -24,12 +24,7 @@ export function About() {
             </Button>
           </div>
           <div className="relative h-[400px] overflow-hidden rounded-xl">
-            <Image
-              src="/placeholder.svg?height=800&width=600"
-              alt="Child studying"
-              fill
-              className="object-cover"
-            />
+            <Image src="/kids-books.jpg" alt="Kids with books" fill className="object-cover" />
           </div>
         </div>
       </div>

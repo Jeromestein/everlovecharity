@@ -22,7 +22,7 @@ export function Projects() {
           <div className="group relative overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-xl">
             <div className="aspect-video relative overflow-hidden">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/library-for-kids.webp"
                 alt="Classroom building project"
                 fill
                 className="object-cover transition-transform group-hover:scale-105"
@@ -42,7 +42,7 @@ export function Projects() {
           <div className="group relative overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-xl">
             <div className="aspect-video relative overflow-hidden">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/Childrens-Book-Day-header-400x250.png"
                 alt="School supplies program"
                 fill
                 className="object-cover transition-transform group-hover:scale-105"

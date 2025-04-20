@@ -6,10 +6,11 @@ export function HomeHero() {
     <section className="relative overflow-hidden bg-gradient-to-br from-purple-900 to-rose-800 py-24 md:py-32">
       <div className="absolute inset-0 z-0 opacity-20">
         <Image
-          src="/placeholder.svg?height=1080&width=1920"
+          src="/Education-as-a-Lifeline-Blog-Header-400x250.png"
           alt="Children in classroom"
           fill
           className="object-cover"
+          style={{ objectPosition: '50% 75%' }}
           priority
         />
       </div>
