@@ -3,6 +3,20 @@
 import { motion, useAnimate } from 'framer-motion'
 import { useEffect } from 'react'
 
+// Format large numbers into readable format with suffix
+const formatCurrency = (value: number): string => {
+  const suffixes = ['', 'K', 'M', 'B', 'T']
+  let suffixIndex = 0
+  let formattedValue = value
+
+  while (formattedValue >= 1000 && suffixIndex < suffixes.length - 1) {
+    formattedValue /= 1000
+    suffixIndex++
+  }
+
+  return `$${formattedValue.toFixed(1)}${suffixes[suffixIndex]}`
+}
+
 export function ImpactStats() {
   const [scope, animate] = useAnimate()
 
@@ -66,7 +80,7 @@ export function ImpactStats() {
             <span className="text-4xl text-muted-foreground font-normal">More than</span>
             <motion.span
               id="money"
-              className="text-5xl text-rose-600 font-bold"
+              className="text-3xl md:text-5xl text-rose-600 font-bold break-all leading-tight"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
