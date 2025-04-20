@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { Heart } from 'lucide-react'
 
+import { LogoName } from '@/components'
+
 export function Footer() {
   return (
     <footer className="border-t bg-background py-8 md:py-12">
@@ -8,12 +10,10 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div className="space-y-4 md:max-w-xs">
             <div className="flex items-center gap-2">
-              <Heart className="h-6 w-6 text-rose-500" />
-              <span className="text-xl font-bold">Everlove</span>
+              <LogoName />
             </div>
             <p className="text-sm text-muted-foreground">
-              Everlove is a nonprofit initiative currently in the process of applying for 501(c)(3)
-              status.
+              *A nonprofit initiative currently in the process of applying for 501(c)(3) status.
             </p>
           </div>
 

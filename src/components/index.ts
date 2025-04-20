@@ -1,4 +1,7 @@
 // Export all components for easier imports
+export { Logo } from './Logo'
+export { LogoName } from './LogoName'
+
 export { Header } from './Header'
 export { HomeHero } from './HomeHero'
 export { ImpactStats } from './ImpactStats'
