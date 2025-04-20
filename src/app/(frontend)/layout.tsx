@@ -5,9 +5,10 @@ import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
 import React from 'react'
 
-import { AdminBar } from '@/components/AdminBar'
-import { Footer } from '@/Footer/Component'
-import { Header } from '@/Header/Component'
+// import { AdminBar } from '@/components/AdminBar'
+// import { Footer } from '@/Footer/Component'
+// import { Header } from '@/Header/Component'
+import { Header, Footer } from '@/components'
 import { Providers } from '@/providers'
 import { InitTheme } from '@/providers/Theme/InitTheme'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
@@ -35,9 +36,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             }}
           /> */}
 
-          {/* <Header /> */}
+          <Header />
           {children}
-          {/* <Footer /> */}
+          <Footer />
         </Providers>
       </body>
     </html>

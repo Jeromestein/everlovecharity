@@ -5,8 +5,6 @@ import { Header, HomeHero, ImpactStats, About, Projects, CTA, Contact, Footer } 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
-
       <main className="flex-1">
         <HomeHero />
         <ImpactStats />
@@ -15,8 +13,6 @@ export default function Home() {
         <CTA />
         <Contact />
       </main>
-
-      <Footer />
     </div>
   )
 }
