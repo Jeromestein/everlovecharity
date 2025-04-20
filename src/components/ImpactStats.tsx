@@ -8,8 +8,8 @@ export function ImpactStats() {
 
   useEffect(() => {
     // Start counting animations
-    let percentageCounter = { value: 100 }
-    let moneyCounter = { value: 10 }
+    const percentageCounter = { value: 100 }
+    const moneyCounter = { value: 10 }
 
     animate(
       percentageCounter,
