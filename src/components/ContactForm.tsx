@@ -24,6 +24,8 @@ import {
 import { Textarea } from '@/components/ui/textarea'
 import { toast } from 'sonner'
 import { resendEmail } from '@/app/(frontend)/emails/actions'
+import { useState } from 'react'
+
 const formSchema = z.object({
   firstName: z.string().min(2, {
     message: 'First name must be at least 2 characters.',
@@ -43,6 +45,8 @@ const formSchema = z.object({
 })
 
 export function ContactForm() {
+  const [isLoading, setIsLoading] = useState(false)
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -55,13 +59,43 @@ export function ContactForm() {
   })
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    // Send form data to your API
-    console.log(values)
-    toast.success('Message sent successfully!', {
-      description: 'We will get back to you as soon as possible.',
-    })
-    form.reset()
+    setIsLoading(true)
+
+    try {
+      // Build email content
+      const htmlContent = `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${values.firstName} ${values.lastName}</p>
+        <p><strong>Email:</strong> ${values.email}</p>
+        <p><strong>Reason:</strong> ${values.reason}</p>
+        <p><strong>Message:</strong></p>
+        <p>${values.message.replace(/\n/g, '<br>')}</p>
+      `
+
+      // Send email
+      await resendEmail({
+        to: values.email, // Use environment variable or default value
+        subject: `Contact Form: ${values.firstName} ${values.lastName} - ${values.reason}`,
+        html: htmlContent,
+      })
+
+      // Success message
+      toast.success('Message sent successfully!', {
+        description: 'We will get back to you soon.',
+      })
+
+      // Reset form
+      form.reset()
+    } catch (error) {
+      console.error('Sending email failed:', error)
+      toast.error('Sending failed', {
+        description: 'An error occurred while sending the message. Please try again later.',
+      })
+    } finally {
+      setIsLoading(false)
+    }
   }
+
   return (
     <div className="rounded-xl border p-6 shadow-sm">
       <Form {...form}>
@@ -165,8 +199,12 @@ export function ContactForm() {
             )}
           />
 
-          <Button type="submit" className="w-full bg-rose-600 hover:bg-rose-700">
-            Send Message
+          <Button
+            type="submit"
+            className="w-full bg-rose-600 hover:bg-rose-700"
+            disabled={isLoading}
+          >
+            {isLoading ? '发送中...' : '发送消息'}
           </Button>
         </form>
       </Form>
