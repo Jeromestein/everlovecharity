@@ -50,6 +50,7 @@ export function ContactForm() {
       lastName: '',
       email: '',
       message: '',
+      reason: '',
     },
   })
 
@@ -115,7 +116,6 @@ export function ContactForm() {
           />
 
           <FormField
-            defaultValue=""
             control={form.control}
             name="reason"
             render={({ field }) => (
@@ -126,7 +126,7 @@ export function ContactForm() {
                 <FormDescription>
                   Help us better serve you by choosing one of the following:
                 </FormDescription>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger>
                       <SelectValue placeholder="Select a reason" />
