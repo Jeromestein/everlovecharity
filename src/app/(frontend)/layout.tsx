@@ -28,15 +28,15 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body>
         <Providers>
-          <AdminBar
+          {/* <AdminBar
             adminBarProps={{
               preview: isEnabled,
             }}
-          />
+          /> */}
 
-          <Header />
+          {/* <Header /> */}
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </Providers>
       </body>
     </html>
@@ -44,10 +44,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 }
 
 export const metadata: Metadata = {
+  title: {
+    template: '%s | Everlove Charity Foundation',
+    default: 'Home | For Children and Future｜ Everlove Charity Foundation',
+  },
+  description:
+    'A non-profit organization that believes: Every child deserves the opportunity to learn and grow. We are committed to making a difference in their lives.',
   metadataBase: new URL(getServerSideURL()),
   openGraph: mergeOpenGraph(),
   twitter: {
     card: 'summary_large_image',
-    creator: '@payloadcms',
+    creator: '@jeromestein',
   },
 }

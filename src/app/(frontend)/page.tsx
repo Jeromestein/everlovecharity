@@ -1,9 +1,12 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { Heart, BookOpen, School, Globe, Send, ArrowRight } from 'lucide-react'
+
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { Heart, BookOpen, School, Globe, Send, ArrowRight } from 'lucide-react'
 
 export default function Home() {
   return (
