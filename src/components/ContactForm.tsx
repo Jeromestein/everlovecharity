@@ -23,7 +23,7 @@ import {
 } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
 import { toast } from 'sonner'
-
+import { resendEmail } from '@/app/(frontend)/emails/actions'
 const formSchema = z.object({
   firstName: z.string().min(2, {
     message: 'First name must be at least 2 characters.',
@@ -53,7 +53,7 @@ export function ContactForm() {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     // Send form data to your API
     console.log(values)
     toast.success('Message sent successfully!', {
@@ -61,7 +61,6 @@ export function ContactForm() {
     })
     form.reset()
   }
-
   return (
     <div className="rounded-xl border p-6 shadow-sm">
       <Form {...form}>
@@ -116,6 +115,7 @@ export function ContactForm() {
           />
 
           <FormField
+            defaultValue=""
             control={form.control}
             name="reason"
             render={({ field }) => (
