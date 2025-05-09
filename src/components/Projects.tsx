@@ -13,7 +13,10 @@ export function Projects() {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
             Making a difference, one child at a time
           </h2>
-          <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground">
+          <p
+            className="mx-auto mt-4 max-w-[700px] text-muted-foreground"
+            style={{ fontSize: '1.25rem', textShadow: '1px 1px 4px rgba(0,0,0,0.15)' }}
+          >
             Explore our current initiatives bringing education to children in need
           </p>
         </div>
@@ -30,7 +33,10 @@ export function Projects() {
             </div>
             <div className="p-6">
               <h3 className="text-xl font-bold">Rwanda Classroom Initiative</h3>
-              <p className="mt-2 text-muted-foreground min-h-[4.5rem] line-clamp-3">
+              <p
+                className="mt-2 text-muted-foreground min-h-[4.5rem] line-clamp-3"
+                style={{ fontSize: '1.15rem', textShadow: '1px 1px 4px rgba(0,0,0,0.12)' }}
+              >
                 Building a new school facility in rural Rwanda to provide education for 60+ children
               </p>
               <Button variant="link" className="mt-4 p-0 text-rose-600">
@@ -50,7 +56,10 @@ export function Projects() {
             </div>
             <div className="p-6">
               <h3 className="text-xl font-bold">Books & Supplies Program</h3>
-              <p className="mt-2 text-muted-foreground min-h-[4.5rem] line-clamp-3">
+              <p
+                className="mt-2 text-muted-foreground min-h-[4.5rem] line-clamp-3"
+                style={{ fontSize: '1.15rem', textShadow: '1px 1px 4px rgba(0,0,0,0.12)' }}
+              >
                 Providing essential learning materials to children in underserved communities
               </p>
               <Button variant="link" className="mt-4 p-0 text-rose-600">
