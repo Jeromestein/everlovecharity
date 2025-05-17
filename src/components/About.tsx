@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { ArrowRight, Globe, BookOpen, School } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { CaseStudies } from './CaseStudies'
 
 export function About() {
   return (
@@ -28,7 +29,7 @@ export function About() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           <div className="p-6 rounded-lg bg-gradient-to-br from-rose-50 to-purple-300 text-center">
             <Globe className="mx-auto h-10 w-10 text-rose-600 mb-3" />
             <h3 className="text-3xl font-bold mb-2">2+</h3>
@@ -45,6 +46,8 @@ export function About() {
             <p className="text-muted-foreground">School currently under construction</p>
           </div>
         </div>
+
+        <CaseStudies />
       </div>
     </section>
   )
